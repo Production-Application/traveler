@@ -316,6 +316,9 @@
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-folder"></i><span>Package Manager</span></a>
                 <ul class="ml-menu">
                     <li><a href="{{ route('package') }}">Create Package</a></li>
+                    <li><a href="{{ route('packages') }}">Package List</a></li>
+                    <li><a href="{{ route('schedule') }}">Create Schedule</a></li>
+                    <li><a href="{{ route('schedules') }}">Schedule List</a></li>
                 </ul>
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Blog</span></a>

@@ -28,6 +28,14 @@ Route::post('sub-category','SubCategoryController@processSubCategoryForm');
 Route::get('package','PackageController@showPackageForm')->name('package');
 Route::post('package','PackageController@processPackageForm');
 
+Route::get('packages','PackageController@showAllPackages')->name('packages');
+
+// Package Schedules routes
+Route::get('schedule','ScheduleController@showScheduleForm')->name('schedule');
+Route::post('schedule','ScheduleController@processScheduleForm');
+
+Route::post('schedules','ScheduleController@showAllSchedule')->name('schedules');
+
 
 
 
