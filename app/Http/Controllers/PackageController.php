@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class PackageController extends Controller
 {
     public function showPackageForm()
@@ -9,7 +11,7 @@ class PackageController extends Controller
         return view('back_end.package.package');
     }
 
-    public function processPackageForm()
+    public function processPackageForm(Request $request)
     {
 
     }
