@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class PackageController extends Controller
 {
+    public function __construct()
+    {
+    }
+
     public function showPackageForm()
     {
         return view('back_end.package.package');

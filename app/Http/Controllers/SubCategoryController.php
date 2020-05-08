@@ -10,6 +10,10 @@ use Illuminate\Support\Str;
 
 class SubCategoryController extends Controller
 {
+    public function __construct()
+    {
+    }
+
     public function showSubCategoryForm()
     {
         return view('back_end.category.sub_category');

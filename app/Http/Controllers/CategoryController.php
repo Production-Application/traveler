@@ -8,6 +8,10 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+    }
+
     public function showCategoryForm()
     {
         return view('back_end.category.category');

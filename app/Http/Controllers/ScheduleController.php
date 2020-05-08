@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
+    public function __construct()
+    {
+    }
+
     public function showScheduleForm()
     {
         return view('back_end.package.schedule');
