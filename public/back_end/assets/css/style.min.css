@@ -12340,7 +12340,7 @@ section.content {
 .sidebar .menu .list a {
     color: #222;
     position: relative;
-    padding: 15px 10px
+    padding: 6px 9px
 }
 
 .sidebar .menu .list a i {
@@ -20646,7 +20646,8 @@ section.content {
 
 .theme-dark .form-control, .theme-dark .input-group .input-group-append .btn-outline-secondary, .theme-dark .input-group .input-group-prepend .btn-outline-secondary, .theme-dark .input-group-text, .theme-dark .bootstrap-select > .dropdown-toggle {
     border-color: #8c8c8c;
-    background: transparent
+    background: transparent;
+    color: #f8f9fa;
 }
 
 .theme-dark .btn-default, .theme-dark .btn-group .btn {

@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="{{ asset('back_end/assets/plugins/select2/select2.css') }}" />
     <link rel="stylesheet" href="{{ asset('back_end/assets/plugins/dropify/css/dropify.min.css') }}">
     <!-- Custom Css -->
+    <link rel="stylesheet" href="{{ asset('back_end/assets/plugins/wickedpicker/wickedpicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('back_end/assets/css/style.min.css') }}">
 </head>
 
@@ -537,6 +538,8 @@
 
 <script src="{{ asset('back_end/assets/plugins/select2/select2.min.js') }}"></script> <!-- Select2 Js -->
 <script src="{{ asset('back_end/assets/plugins/dropify/js/dropify.min.js') }}"></script>
+<script src="{{ asset('back_end/assets/plugins/wickedpicker/wickedpicker.min.js') }}"></script>
+<script src="{{ asset('back_end/assets/js/pages/datedropper.pro.min.js') }}"></script>
 <script src="{{ asset('back_end/assets/plugins/tinymce/tinymce.min.js') }}"></script>
 @stack('script')
 

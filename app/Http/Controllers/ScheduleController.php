@@ -8,7 +8,7 @@ class ScheduleController extends Controller
 {
     public function showScheduleForm()
     {
-
+        return view('back_end.package.schedule');
     }
 
     public function processScheduleForm(Request $request)
@@ -17,6 +17,6 @@ class ScheduleController extends Controller
 
     public function showAllSchedule()
     {
-
+        return view('back_end.package.schedules');
     }
 }

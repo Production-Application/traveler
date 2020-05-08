@@ -32,7 +32,7 @@
                     @endif
 
                     <div class="card">
-                        <div class="card-header"></div>
+                        <div class="card-header">Create Schedule</div>
                         <div class="card-body">
                             <div class="form-row mb-3">
                                 <div class="col">
@@ -44,17 +44,18 @@
                             </div>
                             <div class="form-row mb-3">
                                 <div class="col">
-                                    <label for="schedule">Schedule Date</label>
-                                    <input type="calender" name="schedule_date"
-                                           class="form-control form-control-sm" id="schedule"
+                                    <label for="scheduleDate">Schedule Date</label>
+                                    <input type="text" name="schedule_date"
+                                           class="form-control form-control-sm timepicker" id="scheduleDate"
                                            value="{{ old('schedule_date') }}"
                                     />
                                 </div>
                                 <div class="col">
-                                    <label for="schedule">Schedule Date</label>
-                                    <input type="time" name="schedule_time"
-                                           class="form-control form-control-sm" id="schedule"
+                                    <label for="scheduleTime">Schedule Time</label>
+                                    <input type="text" name="schedule_time"
+                                           class="form-control form-control-sm" id="scheduleTime"
                                            value="{{ old('schedule_time') }}"
+                                           min="1"
                                     />
                                 </div>
                             </div>
@@ -66,6 +67,18 @@
                                            value="{{ old('schedule_member') }}"
                                     />
                                 </div>
+                                <div class="col">
+                                    <label for="schedule">Package Expense</label>
+                                    <input type="number" name="package_expense"
+                                           class="form-control form-control-sm" id="schedule"
+                                           value="{{ old('package_expense') }}"
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-row mb-3">
+                                <div class="col">
+                                    <input type="submit" class="btn btn-success" value="Submit">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -74,3 +87,15 @@
         </div>
     </div>
 @endsection
+
+@push('script')
+    <script>
+        $( "#scheduleDate" ).dateDropper({
+            theme: 'leaf',
+            format:'d-m-Y',
+        });
+    </script>
+    <script>
+        $('#scheduleTime').wickedpicker()
+    </script>
+@endpush

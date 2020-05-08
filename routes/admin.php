@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "admin" middleware group. Now create something great!
 |
 */
+
 Route::get('/','DashboardController@showDashboard')->name('dashboard');
 
 // Category section routes
