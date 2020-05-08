@@ -45,16 +45,16 @@
                             <div class="form-row mb-3">
                                 <div class="col">
                                     <label for="scheduleDate">Schedule Date</label>
-                                    <input type="text" name="schedule_date"
+                                    <input type="text" name="package_date"
                                            class="form-control form-control-sm timepicker" id="scheduleDate"
-                                           value="{{ old('schedule_date') }}"
+                                           value="{{ old('package_date') }}"
                                     />
                                 </div>
                                 <div class="col">
                                     <label for="scheduleTime">Schedule Time</label>
-                                    <input type="text" name="schedule_time"
+                                    <input type="text" name="package_time"
                                            class="form-control form-control-sm" id="scheduleTime"
-                                           value="{{ old('schedule_time') }}"
+                                           value="{{ old('package_time') }}"
                                            min="1"
                                     />
                                 </div>
@@ -64,7 +64,7 @@
                                     <label for="schedule">Maximum Member</label>
                                     <input type="number" name="schedule_member"
                                            class="form-control form-control-sm" id="schedule"
-                                           value="{{ old('schedule_member') }}"
+                                           value="{{ old('package_member') }}"
                                     />
                                 </div>
                                 <div class="col">

@@ -13,6 +13,11 @@ class Package extends Model
     ];
 
     protected $casts = [
-        'package_img'   => 'json'
+        'package_img' => 'json'
     ];
+
+    public function schedules()
+    {
+        return $this->belongsTo(Schedule::class);
+    }
 }
