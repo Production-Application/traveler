@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('login',function (){
+   return view('back_end.auth.login');
+});
+
 Route::get('/','DashboardController@showDashboard')->name('dashboard');
 
 // Category section routes

@@ -14940,7 +14940,9 @@ section.content {
     box-shadow: none;
     background: transparent
 }
-
+.card.noBorderS {
+    border: none;
+}
 .card .card-inside-title {
     font-size: 15px;
     color: #000
