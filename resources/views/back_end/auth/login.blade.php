@@ -21,26 +21,36 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-12">
-                <form class="card auth_form">
+                <form class="card auth_form" action="{{ route('admin.login') }}" method="post">
+                    @csrf
+
                     <div class="header">
                         <img class="logo" src="{{ asset('back_end/assets/images/logo.svg') }}" alt="">
                         <h5>Log in</h5>
                     </div>
                     <div class="body">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Username">
+                            <input type="text" name="email"
+                                   class="form-control" placeholder="example@gmail.com"
+                                   value="{{ old('email') }}"
+                            />
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="zmdi zmdi-account-circle"></i></span>
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Password">
+                            <input type="password" name="password"
+                                   class="form-control" placeholder="Password"
+                            />
                             <div class="input-group-append">
                                 <span class="input-group-text"><a href="forgot-password.html" class="forgot" title="Forgot Password"><i class="zmdi zmdi-lock"></i></a></span>
                             </div>
                         </div>
                         <div class="checkbox">
-                            <input id="remember_me" type="checkbox">
+                            <input type="checkbox" name="remember"
+                                   id="remember_me"
+                                   value="{{ old('remember') ? 'checked' : '' }}"
+                            />
                             <label for="remember_me">Remember Me</label>
                         </div>
                         <a href="index.html" class="btn btn-primary btn-block waves-effect waves-light">SIGN IN</a>

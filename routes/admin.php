@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('login',function (){
-   return view('back_end.auth.login');
-});
+//Route::get('login',function (){
+//   return view('back_end.auth.login');
+//});
+
+Route::get('system-admin','AdminController@showLoginFrom')->name('admin.login');
+Route::post('system-admin','AdminController@processLoginFrom');
 
 Route::get('/','DashboardController@showDashboard')->name('dashboard');
 

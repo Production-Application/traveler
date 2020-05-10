@@ -1,0 +1,49 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
+class AdminController extends Controller
+{
+    public function __construct()
+    {
+        return $this->middleware('guest:admin', ['except' => ['logout']]);
+    }
+
+    public function showLoginForm()
+    {
+        return view('back_end.auth.login');
+    }
+
+    public function processLoginForm(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        if (!Auth::guard('admin')
+            ->attempt(['email' => $request->input('email'), 'password' => $request->input('password')],
+                $request->remember)) {
+
+
+            session()->flash('message','Opps! Access denied.');
+            session()->flash('type','danger');
+
+            return redirect()->back()->withInput($request->only('email','remember'));
+        }
+
+        session()->flash('message','Congratulations! You are authorized');
+        session()->flash('type','success');
+
+        return redirect()->intended(route('dashboard'));
+    }
+
+}
