@@ -17,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 //   return view('back_end.auth.login');
 //});
 
+// Admin login sytem and logout routes
 Route::get('system-admin','AdminController@showLoginFrom')->name('admin.login');
 Route::post('system-admin','AdminController@processLoginFrom');
+Route::get('system-logout','AdminController@logout')->name('admin.logout');
+
 
 Route::get('/','DashboardController@showDashboard')->name('dashboard');
 

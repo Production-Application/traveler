@@ -53,7 +53,7 @@
                             />
                             <label for="remember_me">Remember Me</label>
                         </div>
-                        <a href="index.html" class="btn btn-primary btn-block waves-effect waves-light">SIGN IN</a>
+                        <input type="submit" class="btn btn-primary btn-block waves-effect waves-light" value="Log In">
                         <div class="signin_with mt-3">
                             <p class="mb-0">or Sign Up using</p>
                             <button class="btn btn-primary btn-icon btn-icon-mini btn-round facebook"><i class="zmdi zmdi-facebook"></i></button>
