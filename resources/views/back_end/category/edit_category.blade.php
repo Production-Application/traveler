@@ -1,12 +1,12 @@
 @extends('back_end.layouts.app')
 
-@section('title','Create Category')
+@section('title','Edit Category')
 
 @section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-7 mx-auto">
-                <form action="{{ route('category') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('category.update') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     @if($errors->any())
@@ -37,7 +37,7 @@
                                     <label for="categoryForm">Category Name</label>
                                     <input type="text" name="category_name" class="form-control"
                                            id="categoryForm"
-                                           value="{{ old('category_name') }}"
+                                           value="{{ $category->category_name }}"
                                     />
                                 </div>
                             </div>
@@ -45,17 +45,22 @@
                                 <div class="col">
                                     <label for="categoryForm">Category Description</label>
                                     <textarea name="category_des" class="form-control"
-                                              id="categoryForm" rows="3">{{ old('category_des') }}</textarea>
+                                              id="categoryForm" rows="3">{{ $category->category_des }}</textarea>
                                 </div>
                             </div>
                             <div class="form-row mb-3">
                                 <div class="col">
                                     <div class="radio">
-                                        <input type="radio" name="category_status" id="radioPub" value="1">
+                                        <input type="radio"
+                                               name="category_status" id="radioPub"
+                                               value="1" {{ $category->category_status == 1 ? 'checked' : ''}}
+                                        >
                                         <label for="radioPub">Published</label>
                                     </div>
                                     <div class="radio">
-                                        <input type="radio" name="category_status" id="radioUnpub" value="0">
+                                        <input type="radio"
+                                               name="category_status" id="radioUnpub"
+                                               value="0" {{ $category->category_status == 0 ? 'checked' : ''}}>
                                         <label for="radioUnpub">Unpublished</label>
                                     </div>
                                 </div>

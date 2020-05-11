@@ -32,6 +32,7 @@
                                     <th>Sl</th>
                                     <th>Name</th>
                                     <th>Description</th>
+                                    <th>Status</th>
                                     <th>Image</th>
                                     <th>Action</th>
 
@@ -44,10 +45,20 @@
                                         <td>{{ $index +1 }}</td>
                                         <td>{{ $category->category_name }}</td>
                                         <td>{{ $category->category_des }}</td>
+                                        <td>{{ $category->category_status == 1 ? 'Published' : 'Unpublished' }}</td>
                                         <td style="width: 120px"><img src="{{ asset("uploads/$category->category_img") }}" alt=""></td>
-                                        <td style="width:100px">
-                                            <a href="" class="btn btn-warning btn-sm"><i class="zmdi zmdi-eyedropper"></i></a>
-                                            <a href="" class="btn btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></a>
+                                        <td style="width:75px">
+                                            <a href="{{ route('category.edit',['slug'=>$category->slug]) }}" class="btn btn-warning btn-sm"><i class="zmdi zmdi-eyedropper"></i></a>
+                                            <a href="" class="btn btn-danger btn-sm"
+                                               onclick="event.preventDefault();
+                                               document.getElementById('deleteCategory').submit()">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </a>
+
+                                            <form action="{{ route('category.delete') }}" method="post" id="deleteCategory">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{ $category->id }}">
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

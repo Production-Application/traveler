@@ -28,6 +28,9 @@ Route::get('/','DashboardController@showDashboard')->name('dashboard');
 // Category section routes
 Route::get('category','CategoryController@showCategoryForm')->name('category');
 Route::post('category','CategoryController@processCategoryForm');
+Route::get('category-edit/{slug}','CategoryController@editCategoryForm')->name('category.edit');
+Route::get('category-update','CategoryController@updateCategoryForm')->name('category.update');
+Route::post('category-delete','CategoryController@deleteCategoryForm')->name('category.delete');
 
 Route::get('categories','CategoryController@showAllCategory')->name('categories');
 

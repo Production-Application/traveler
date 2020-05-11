@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(AdminSeeder::class);
 
-        for ($i=0;$i <=15;$i++){
-            $this->call(UserSeeder::class);
-            $this->call(CategorySeeder::class);
-        }
+//        for ($i=0;$i <=15;$i++){
+//            $this->call(UserSeeder::class);
+//            $this->call(CategorySeeder::class);
+//        }
     }
 }
