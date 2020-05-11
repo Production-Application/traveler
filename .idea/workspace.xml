@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfd5e65b-b52b-4d61-8364-f376d6492aaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeds/AdminSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/CategorySeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/SubCategorySeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PackageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PackageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ScheduleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ScheduleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back_end/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back_end/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back_end/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back_end/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X0de9e4ae1f9869647995f42f40be6199.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +143,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -194,6 +180,7 @@
       <workItem from="1589017600430" duration="3104000" />
       <workItem from="1589086196976" duration="6884000" />
       <workItem from="1589166172979" duration="6797000" />
+      <workItem from="1589173924210" duration="321000" />
     </task>
     <servers />
   </component>
