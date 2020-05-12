@@ -20,11 +20,12 @@ class CategoryController extends Controller
         return view('back_end.category.category');
     }
 
+    // Function for category store in database
     public function processCategoryForm(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'category_name' => 'required | min:5',
-            'category_des' => 'required | min:100',
+            'category_des' => 'required',
             'category_status' => 'required',
             'category_img' => 'required | image | mimes:jpg,jpeg,png,svg',
         ]);
@@ -63,6 +64,7 @@ class CategoryController extends Controller
         }
     }
 
+    // Function for showing category edit form
     public function editCategoryForm($slug)
     {
         return view('back_end.category.edit_category')->with([
@@ -70,11 +72,21 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function updateCategoryForm()
+    // Function for updating a category
+    public function updateCategoryForm(Request $request,$slug)
     {
+        $category = Category::where('slug',$slug)->first();
 
+        $category->category_name = $request->input('category_name');
+        $category->category_des = $request->input('category_des');
+        $category->category_status = $request->input('category_status');
+        $category->slug = strtolower(Str::slug($request->post('category_name'),'-'));
+
+        $category->save();
+        dd($category);
     }
 
+    // Function for deleting category permanently
     public function deleteCategoryForm(Request $request)
     {
         $category = Category::find($request->id);
@@ -83,10 +95,11 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
+    // Function for show all categories
     public function showAllCategory()
     {
         return view('back_end.category.categories')->with([
-            'categories' => Category::all()
+            'categories' => Category::orderby('created_at','desc')->get()
         ]);
     }
 }

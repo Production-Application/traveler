@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-7 mx-auto">
-                <form action="{{ route('category.update') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('category.update',['slug' => $category->slug]) }}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     @if($errors->any())

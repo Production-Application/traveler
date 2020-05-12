@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //   return view('back_end.auth.login');
 //});
 
-// Admin login sytem and logout routes
+// Admin login system and logout routes
 Route::get('system-admin','AdminController@showLoginFrom')->name('admin.login');
 Route::post('system-admin','AdminController@processLoginFrom');
 Route::get('system-logout','AdminController@logout')->name('admin.logout');
@@ -29,9 +29,8 @@ Route::get('/','DashboardController@showDashboard')->name('dashboard');
 Route::get('category','CategoryController@showCategoryForm')->name('category');
 Route::post('category','CategoryController@processCategoryForm');
 Route::get('category-edit/{slug}','CategoryController@editCategoryForm')->name('category.edit');
-Route::get('category-update','CategoryController@updateCategoryForm')->name('category.update');
+Route::post('category-update/{slug}','CategoryController@updateCategoryForm')->name('category.update');
 Route::post('category-delete','CategoryController@deleteCategoryForm')->name('category.delete');
-
 Route::get('categories','CategoryController@showAllCategory')->name('categories');
 
 // Sub category section routes
