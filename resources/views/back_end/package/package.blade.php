@@ -42,14 +42,17 @@
                                         <label for="package">Select a category</label>
                                         <select name="category_id" class="form-control form-control-sm" id="package">
                                             <option value="">-- Please select a category --</option>
+                                            @foreach($categories as $index=>$category)
+                                                <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-row mb-3">
-                                        <label for="package">Select a sub category</label>
-                                        <select name="sub_category_id" class="form-control form-control-sm" id="package">
-                                            <option value="">-- Please select a sub category --</option>
-                                        </select>
-                                    </div>
+{{--                                    <div class="form-row mb-3">--}}
+{{--                                        <label for="package">Select a sub category</label>--}}
+{{--                                        <select name="sub_category_id" class="form-control form-control-sm" id="package">--}}
+{{--                                            <option value="">-- Please select a sub category --</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
                                     <div class="form-row mb-3">
                                         <label for="package">Package Title</label>
                                         <input type="text" name="package_title"

@@ -18,6 +18,7 @@ class ScheduleController extends Controller
 
     public function processScheduleForm(Request $request)
     {
+        dd($request->all());
     }
 
     public function showAllSchedule()

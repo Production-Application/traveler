@@ -47,7 +47,7 @@ Route::get('packages','PackageController@showAllPackages')->name('packages');
 Route::get('schedule','ScheduleController@showScheduleForm')->name('schedule');
 Route::post('schedule','ScheduleController@processScheduleForm');
 
-Route::post('schedules','ScheduleController@showAllSchedule')->name('schedules');
+Route::get('schedules','ScheduleController@showAllSchedule')->name('schedules');
 
 
 
