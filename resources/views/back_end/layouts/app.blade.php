@@ -542,7 +542,8 @@
 <script src="{{ asset('back_end/assets/plugins/dropify/js/dropify.min.js') }}"></script>
 <script src="{{ asset('back_end/assets/plugins/wickedpicker/wickedpicker.min.js') }}"></script>
 <script src="{{ asset('back_end/assets/js/pages/datedropper.pro.min.js') }}"></script>
-<script src="{{ asset('back_end/assets/plugins/tinymce/tinymce.min.js') }}"></script>
+{{--<script src="{{ asset('back_end/assets/plugins/tinymce/tinymce.min.js') }}"></script>--}}
+<script src="{{ asset('back_end/assets/plugins/ckeditor/build/ckeditor.js') }}"></script>
 @stack('script')
 
 <script src="{{ asset('back_end/assets/bundles/mainscripts.bundle.js') }}"></script>
