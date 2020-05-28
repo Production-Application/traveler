@@ -90,7 +90,7 @@
                                     <div class="form-row mb-3">
                                         <div class="col">
                                             <label for="packageDes">Package Description</label>
-                                            <texarea name="package_des" id="packageDes"></texarea>
+                                            <textarea name="package_des" id="packageDes"></textarea>
 {{--                                            <div id="packageDes"></div>--}}
                                         </div>
                                     </div>
@@ -149,44 +149,42 @@
     <script>
         ClassicEditor
             .create( document.querySelector( '#packageDes' ), {
-
-                removePlugins: ['restrictedEditing'],
+                ckfinder: {
+                    uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+                },
                 toolbar: {
                     items: [
                         'heading',
                         '|',
                         'bold',
                         'italic',
-                        'link',
+                        'underline',
+                        'subscript',
+                        'superscript',
+                        'strikethrough',
                         'bulletedList',
                         'numberedList',
                         '|',
                         'indent',
                         'outdent',
+                        'alignment',
+                        'pageBreak',
+                        'todoList',
+                        'codeBlock',
+                        'horizontalLine',
                         '|',
                         'imageUpload',
                         'blockQuote',
                         'insertTable',
                         'mediaEmbed',
-                        'undo',
-                        'redo',
-                        'codeBlock',
-                        'fontSize',
+                        'CKFinder',
+                        '|',
                         'fontColor',
+                        'fontSize',
                         'fontBackgroundColor',
                         'fontFamily',
                         'highlight',
-                        'pageBreak',
-                        'removeFormat',
-
-                        'subscript',
-                        'superscript',
-                        'strikethrough',
-                        'todoList',
-                        'underline',
-                        'CKFinder',
-                        'alignment',
-                        'horizontalLine'
+                        'removeFormat'
                     ]
                 },
                 language: 'en',
@@ -206,12 +204,21 @@
                         'tableProperties'
                     ]
                 },
+                licenseKey: '',
+
             } )
-            .then( packageDes => {
-                window.editor = packageDes;
+            .then( editor => {
+                window.editor = editor;
+
+
+
+
             } )
             .catch( error => {
                 console.error( 'Oops, something gone wrong!' );
+                console.error( 'Please, report the following error in the https://github.com/ckeditor/ckeditor5 with the build id and the error stack trace:' );
+                console.warn( 'Build id: jufclabr7vzo-rbp016705aeg' );
+                console.error( error );
             } );
     </script>
 
