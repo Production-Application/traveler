@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <form action="{{ route('package') }}" method="post">
+                <form action="{{ route('package') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     {{-- Errors Showing Section --}}
@@ -72,7 +72,7 @@
                                     <div class="form-row mb-3">
                                         <div class="col">
                                             <label for="package">Tour Attractions</label>
-                                            <input type="text" name="package_attraction"
+                                            <input type="text" name="package_attraction[]"
                                                    class="form-control form-control-sm" id="package"
                                                    value="{{ old('package_attraction') }}"
                                                    placeholder="Chottogram,Bandarban,Khagrasori,Rangamati"
@@ -112,26 +112,6 @@
                             <div class="card">
                                 <div class="card-header">Package Additional Information</div>
                                 <div class="card-body">
-
-
-                                    <div class="form-row mb-3">
-                                        <div class="col">
-                                            <label for="package">Package Duration</label>
-                                            <input type="text" name="package_duration"
-                                                   class="form-control form-control-sm" id="package"
-                                                   value="{{ old('package_duration') }}"
-                                                   placeholder="10 days / 11 nights"
-                                            >
-                                        </div>
-                                        <div class="col">
-                                            <label for="package">Package Duration</label>
-                                            <input type="text" name="package_duration"
-                                                   class="form-control form-control-sm" id="package"
-                                                   value="{{ old('package_duration') }}"
-                                                   placeholder="10 days / 11 nights"
-                                            >
-                                        </div>
-                                    </div>
                                     <div class="form-row mb-3">
                                         <input type="submit" class="btn btn-success " value="Submit">
                                     </div>
@@ -150,7 +130,9 @@
         ClassicEditor
             .create( document.querySelector( '#packageDes' ), {
                 ckfinder: {
-                    uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+                    openerMethod: 'popup',
+                    uploadUrl:
+                        '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
                 },
                 toolbar: {
                     items: [
@@ -204,20 +186,14 @@
                         'tableProperties'
                     ]
                 },
-                licenseKey: '',
-
             } )
+
             .then( editor => {
                 window.editor = editor;
-
-
-
-
             } )
+
             .catch( error => {
                 console.error( 'Oops, something gone wrong!' );
-                console.error( 'Please, report the following error in the https://github.com/ckeditor/ckeditor5 with the build id and the error stack trace:' );
-                console.warn( 'Build id: jufclabr7vzo-rbp016705aeg' );
                 console.error( error );
             } );
     </script>
