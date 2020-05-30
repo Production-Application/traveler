@@ -16,13 +16,13 @@ class CreatePackagesTable extends Migration
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->foreignId('sub_category_id')->constrained()->onDelete('cascade');
             $table->string('package_title',180);
             $table->string('package_sub_title',180);
             $table->string('package_attractions',100);
             $table->string('package_best_time',40);
             $table->longText('package_des');
             $table->json('package_img');
+            $table->string('slug',210);
             $table->timestamps();
         });
     }

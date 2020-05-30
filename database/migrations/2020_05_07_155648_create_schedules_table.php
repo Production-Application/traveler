@@ -15,6 +15,13 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('package_id')->constrained()->onDelete('cascade');
+            $table->string('package_date',12);
+            $table->string('package_time',10);
+            $table->string('package_member',5);
+            $table->string('package_expense',10);
+            $table->string('package_duration',20);
+            $table->string('package_code',40)->unique('package');
             $table->timestamps();
         });
     }

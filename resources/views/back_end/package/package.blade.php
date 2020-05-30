@@ -72,7 +72,7 @@
                                     <div class="form-row mb-3">
                                         <div class="col">
                                             <label for="package">Tour Attractions</label>
-                                            <input type="text" name="package_attraction[]"
+                                            <input type="text" name="package_attractions"
                                                    class="form-control form-control-sm" id="package"
                                                    value="{{ old('package_attraction') }}"
                                                    placeholder="Chottogram,Bandarban,Khagrasori,Rangamati"
@@ -91,13 +91,12 @@
                                         <div class="col">
                                             <label for="packageDes">Package Description</label>
                                             <textarea name="package_des" id="packageDes"></textarea>
-{{--                                            <div id="packageDes"></div>--}}
                                         </div>
                                     </div>
                                     <div class="form-row mb-3">
                                         <div class="col">
                                             <label for="package">Select Package Images</label>
-                                            <input type="file" name="package_img[]"
+                                            <input type="file" name="package_img"
                                                    class="dropify" data-show-errors="true" multiple
                                             />
                                         </div>

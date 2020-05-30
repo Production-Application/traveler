@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Package;
+use App\Schedule;
+use Exception;
 use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
@@ -13,12 +16,24 @@ class ScheduleController extends Controller
 
     public function showScheduleForm()
     {
-        return view('back_end.package.schedule');
+        $data['packages'] = Package::all();
+        return view('back_end.package.schedule', $data);
     }
 
     public function processScheduleForm(Request $request)
     {
-        dd($request->all());
+        try {
+            Schedule::create($request->all());
+
+            session()->flash('message', 'Congratulations! Your category created successfully.');
+            session()->flash('type', 'success');
+
+            return redirect()->back();
+        } catch (Exception$exception) {
+
+            session()->flash('message', 'Oppes! Your category create unsuccessful.'.$exception->getMessage());
+            session()->flash('type', 'danger');
+        }
     }
 
     public function showAllSchedule()
